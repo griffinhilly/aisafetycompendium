@@ -981,6 +981,15 @@ details.pcard[open] { grid-column: 1 / -1; }
 		$('approaches').scrollIntoView({ behavior: 'smooth', block: 'start' });
 	}
 	$('sheet').addEventListener('click', (e) => {
+		const cp = e.target.closest('button[data-copy]');
+		if (cp) {
+			const url = location.origin + location.pathname + '#card-' + cp.dataset.copy;
+			const done = () => { cp.textContent = 'Link copied'; };
+			(navigator.clipboard ? navigator.clipboard.writeText(url).then(done) : Promise.reject()).catch(() => { prompt('Link to this approach:', url); });
+			return;
+		}
+		const og = e.target.closest('a[data-org]');
+		if (og) { e.preventDefault(); return orgJump && orgJump(og.dataset.org); }
 		const c = e.target.closest('[data-card]');
 		if (c) { e.preventDefault(); return openCard(c.dataset.card); }
 		const r = e.target.closest('a[data-row]');
@@ -1000,6 +1009,31 @@ details.pcard[open] { grid-column: 1 / -1; }
 
 	/* ------------------------------------------------------------ approach detail sheet (cards, map points) */
 	const rowOfCard = Object.fromEntries(union.filter((r) => r.atlas).map((r) => [r.atlas, r.id]));
+	/* organisation names in a sheet link to the directory: match the full name, its short name, or the name with a
+	   bracketed team or a trailing ", University" part removed */
+	const normOrg = (s) => String(s || '').toLowerCase().replace(/^the /, '').replace(/[’'.]/g, '').replace(/\s+/g, ' ').trim();
+	const orgIndex = new Map();
+	(D.orgs || []).forEach((o) => [o.name, o.short, String(o.name).replace(/\s*\(.*?\)\s*/g, ' ')].forEach((k) => { if (k && !orgIndex.has(normOrg(k))) orgIndex.set(normOrg(k), o.id); }));
+	// former and common names (Open Philanthropy was renamed Coefficient Giving; Timaeus is now Resolution)
+	const ORG_ALIAS = { 'open philanthropy': 'coefficient-giving', 'rand': 'rand', 'rand corporation': 'rand',
+		'artificial intelligence underwriting company': 'aiuc', 'european commission': 'eu-ai-office',
+		'european commission ai office': 'eu-ai-office', 'microsoft research': 'microsoft', 'resolution': 'timaeus' };
+	const orgIds = new Set((D.orgs || []).map((o) => o.id));
+	Object.entries(ORG_ALIAS).forEach(([k, v]) => { if (orgIds.has(v) && !orgIndex.has(k)) orgIndex.set(k, v); });
+	const orgIdFor = (n) => {
+		const tries = [n, String(n).replace(/\s*\(.*?\)\s*/g, ' '), String(n).split(',')[0], (String(n).match(/\(([^)]+)\)/) || [])[1], String(n).split(/ [–—-] /)[0]];
+		for (const t of tries) { const id = t && orgIndex.get(normOrg(t)); if (id) return id; }
+		return null;
+	};
+	let orgJump = null;   // set by the organisations directory below
+	/* each approach has its own address: #card-<id> opens its sheet, and the address bar follows the open sheet */
+	const sheetBox = $('sheet');
+	const syncHash = () => {
+		const m = sheet.isOpen() && sheetBox.querySelector('[data-sheet-card]');
+		const want = m ? '#card-' + m.dataset.sheetCard : '';
+		if (location.hash !== want && (m || /^#card-/.test(location.hash))) history.replaceState(null, '', location.pathname + location.search + want);
+	};
+	new MutationObserver(syncHash).observe(sheetBox, { attributes: true, attributeFilter: ['class'], childList: true });
 	/* corrections go to the public repo's issues, prefilled with the approach */
 	const fixUrl = (c) => 'https://github.com/griffinhilly/aisafetycompendium/issues/new?' + new URLSearchParams({
 		title: `Correction: ${c.name} (${c.id})`,
@@ -1012,8 +1046,9 @@ details.pcard[open] { grid-column: 1 / -1; }
 		const link = (t, u) => u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>` : esc(t);
 		const paras = (t) => String(t || '').split(/\n\s*\n/).filter(Boolean).map((p) => `<p>${esc(p)}</p>`).join('');
 		const list = (xs, f) => xs && xs.length ? `<ul class="dp-list">${xs.map((x) => `<li>${f(x)}</li>`).join('')}</ul>` : '';
+		const orgName = (n) => { const oid = orgIdFor(n); return oid ? `<a href="#org-${esc(oid)}" data-org="${esc(oid)}"><b>${esc(n)}</b></a>` : `<b>${esc(n)}</b>`; };
 		const who = d && d.organizations && d.organizations.length
-			? list(d.organizations, (o) => `<b>${esc(o.name)}</b>: ${esc(stop(o.what))}${o.output_url ? ` ${link(o.output_title || 'their work', o.output_url)}${o.output_year ? ' (' + esc(o.output_year) + ')' : ''}` : ''}`)
+			? list(d.organizations, (o) => `${orgName(o.name)}: ${esc(stop(o.what))}${o.output_url ? ` ${link(o.output_title || 'their work', o.output_url)}${o.output_year ? ' (' + esc(o.output_year) + ')' : ''}` : ''}`)
 			: `<p>${esc(c.who)}</p>`;
 		const deep = d ? `<p class="dp-lead">${esc(d.summary)}</p>
 			${d.how_it_works ? `<h4 class="dp-h">How it works</h4>${paras(d.how_it_works)}` : ''}
@@ -1029,7 +1064,8 @@ details.pcard[open] { grid-column: 1 / -1; }
 			${c.secondary ? '<span class="kit-tag">Described from search summaries</span> ' : ''}${c.scan ? '<span class="kit-tag">Found in the wider source scan</span>' : ''}
 			${ex ? `<h4 class="ex-h">In their own words</h4>${ex}` : ''}
 			${row ? `<p><a href="#maps" data-row="${row}">What the ${NS} sources say about it</a></p>` : ''}
-			<p><a href="#card-${c.id}" data-goto="${c.id}">Show it in the approach list</a></p>
+			<p><a href="#card-${c.id}" data-goto="${c.id}">Show it in the approach list</a> · <button type="button" class="ap-more dp-copy" data-copy="${c.id}">Copy a link to this approach</button></p>
+			<span data-sheet-card="${c.id}" hidden></span>
 			<p class="dp-fix"><a href="${fixUrl(c)}" target="_blank" rel="noopener">Suggest a correction</a> <span class="dp-src">Something wrong, out of date or missing, such as an organisation? Opens a GitHub issue (free account needed).</span></p>`);
 	}
 
@@ -1322,7 +1358,7 @@ details.pcard[open] { grid-column: 1 / -1; }
 		const orgs = [...D.orgs].sort((a, b) => a.name.localeCompare(b.name));
 		let ogType = 'all', ogQuery = '', ogGroup = '';
 		const types = Object.keys(OT).filter((t) => orgs.some((o) => o.type === t));
-		Kit.chips($('og-chips'), [{ value: 'all', label: 'All' }, ...types.map((t) => ({ value: t, label: OT[t] }))], ogType, (v) => { ogType = v; renderOrgs(); });
+		const ogChips = Kit.chips($('og-chips'), [{ value: 'all', label: 'All' }, ...types.map((t) => ({ value: t, label: OT[t] }))], ogType, (v) => { ogType = v; renderOrgs(); });
 		$('og-search').addEventListener('input', (e) => { ogQuery = e.target.value.trim().toLowerCase(); renderOrgs(); });
 		$('og-group').innerHTML = '<option value="">Working on any group</option>' + D.atlas_groups.map((g) => `<option value="${g.id}">${esc(g.title)}</option>`).join('');
 		$('og-group').addEventListener('change', (e) => { ogGroup = e.target.value; renderOrgs(); });
@@ -1337,7 +1373,19 @@ details.pcard[open] { grid-column: 1 / -1; }
 		}
 		$('og-grid').addEventListener('click', (e) => { const b = e.target.closest('button[data-card]'); if (b) openCard(b.dataset.card); });
 		renderOrgs();
+		orgJump = (oid) => {
+			sheet.close();
+			ogType = 'all'; ogQuery = ''; ogGroup = ''; $('og-search').value = ''; $('og-group').value = '';
+			ogChips.set('all'); renderOrgs();
+			const el = $('org-' + oid); if (!el) return;
+			const bar = document.querySelector('.kit-top');   // land the card's name just under the sticky top bar
+			scrollTo({ top: el.getBoundingClientRect().top + scrollY - (bar ? bar.offsetHeight : 0) - 10, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+			flash(el);
+		};
+		if (/^#org-/.test(location.hash)) { const el = document.getElementById(location.hash.slice(1)); if (el) el.scrollIntoView({ block: 'center' }); }
 	}
+	/* opened from a shared link to one approach: open its sheet */
+	{ const m = location.hash.match(/^#card-([\w-]+)$/); if (m && cardById[m[1]]) openCard(m[1]); }
 
 	/* ------------------------------------------------------------ people */
 	let ppType = 'all', ppQuery = '', ppHub = '';
