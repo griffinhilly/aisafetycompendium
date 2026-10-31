@@ -1391,7 +1391,7 @@ details.pcard[open] { grid-column: 1 / -1; }
 		`Some approaches were added where a later review found well-documented work with no card.`,
 		`Each quote under an approach is copied word for word from that source, as fetched in October 2026, and links to the passage. Where a source gives only a heading, the heading is shown. A hollow dot carries what the source says nearby.`,
 		`The approach list also adds work found in lab research programmes, funder calls and lists of mentored research projects.${secondary ? ` ${secondary} entries are marked "described from search summaries": they rest on search snippets, not a full read of the source.` : ''}`,
-		`The people and organisations are a starting set of figures who shaped the field's ideas, money and institutions, without entries about legal cases or private groups. Each entry was checked against current web sources on ${fmtDate(D.as_of_people)}. Claims that could not be confirmed are left out. Roles change quickly.`,
+		`Each entry under People and organisations was checked against current web sources on ${fmtDate(D.as_of_people)}. Claims that could not be confirmed are left out. Roles change quickly.`,
 	].map((t) => `<p>${t}</p>`).join('');
 	$('asof').textContent = `Chart sources as of ${fmtDate(D.as_of_sources)}; approaches as of ${fmtDate(D.as_of_scan)}, and from the wider source scan as of ${fmtDate(D.as_of_expansion)}. People and organisations as of ${fmtDate(D.as_of_people)}.`;
 })();
