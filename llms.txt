@@ -18,7 +18,6 @@ Feeds all four: it adds people, money and know-how to making aligned models, eva
 - [Forecasting](https://aisafetycompendium.com/compendium/approaches/forecasting/): Predict capability timelines as an input to prioritisation.
 - [Grantmaking and regranting](https://aisafetycompendium.com/compendium/approaches/grantmaking-and-regranting/): Move money to safety work fast through people with taste and dealflow.
 - [Think tank for AI labs](https://aisafetycompendium.com/compendium/approaches/think-tank-for-ai-labs/): On-demand independent expertise for lab safety and governance teams.
-- [Automated safety research](https://aisafetycompendium.com/compendium/approaches/automated-safety-research/): Uses AI systems to do alignment research, so safety work can keep pace with growing capabilities.
 - [Public communication and content creation](https://aisafetycompendium.com/compendium/approaches/public-communication/): Explain AI risk to wide audiences through video, podcasts, books, social media and journalism.
 - [Career advice and job matching](https://aisafetycompendium.com/compendium/approaches/career-advice-and-job-matching/): Give people free career research, one-on-one advice and curated job listings that steer them into AI safety roles.
 - [Research training and upskilling programmes](https://aisafetycompendium.com/compendium/approaches/research-training-programmes/): Run courses, bootcamps and mentored fellowships that train newcomers for AI safety research, engineering and policy work.
@@ -79,6 +78,7 @@ Building the model so it wants and does the right thing.
 - [Robustness and goal generalisation under distribution shift](https://aisafetycompendium.com/compendium/approaches/robustness-to-distribution-shift/): Make a model keep both its skills and its intended goals when deployment conditions differ from training.
 - [Calibration and honest expression of uncertainty](https://aisafetycompendium.com/compendium/approaches/calibration-and-honest-uncertainty/): Train and test models so their stated confidence matches how often they are right, and they say when they do not know.
 - [Constrained reinforcement learning / shielding](https://aisafetycompendium.com/compendium/approaches/constrained-rl-and-shielding/): Keep a learning agent inside safety limits, either by maximising reward subject to cost constraints or by a shield outside the policy that blocks unsafe actions.
+- [Automated safety research](https://aisafetycompendium.com/compendium/approaches/automated-safety-research/): Uses AI systems to do alignment research, so safety work can keep pace with growing capabilities.
 - [Safer alternative AI designs (non-agentic and bounded systems)](https://aisafetycompendium.com/compendium/approaches/safer-alternative-ai-designs/): Build a different kind of AI that is safe by design, such as a predictor with no goals of its own, instead of aligning goal-pursuing agents.
 
 ## Evaluating
