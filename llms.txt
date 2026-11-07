@@ -7,6 +7,10 @@ All approaches: https://aisafetycompendium.com/compendium/approaches/
 
 ## Building the field
 
+Feeds all four: it adds people, money and know-how to making aligned models, evaluating, constraining and societal resilience.
+
+### Building the field
+
 - [Conceptual-alignment literature bridging](https://aisafetycompendium.com/compendium/approaches/philosophy-to-safety-bridging/): Have someone read academic philosophy full-time and translate it for safety researchers.
 - [Founding new organisations on unowned problems](https://aisafetycompendium.com/compendium/approaches/founding-new-organisations/): Fund people to start the organisations the field lacks.
 - [Senior and specialised talent recruitment](https://aisafetycompendium.com/compendium/approaches/senior-talent-recruitment/): Headhunt people with law, security, hardware, policy or founding backgrounds into safety.
@@ -17,7 +21,11 @@ All approaches: https://aisafetycompendium.com/compendium/approaches/
 - [Automated safety research](https://aisafetycompendium.com/compendium/approaches/automated-safety-research/): Uses AI systems to do alignment research, so safety work can keep pace with growing capabilities.
 - [Public communication and content creation](https://aisafetycompendium.com/compendium/approaches/public-communication/): Explain AI risk to wide audiences through video, podcasts, books, social media and journalism.
 
-## Deciding what AI should value
+## Making aligned models
+
+Building the model so it wants and does the right thing.
+
+### Deciding what AI should value
 
 - [Model specs, constitutions, character training](https://aisafetycompendium.com/compendium/approaches/model-specs-and-character-training/): Give the model an explicit written statement of values and persona to train toward.
 - [Law-following AI](https://aisafetycompendium.com/compendium/approaches/law-following-ai/): Give AI agents actual legal duties, so they refuse illegal acts on a principal's behalf.
@@ -35,7 +43,7 @@ All approaches: https://aisafetycompendium.com/compendium/approaches/
 - [AI philosophical competence (metaphilosophy)](https://aisafetycompendium.com/compendium/approaches/ai-philosophical-competence/): Make AI systems better at reasoning about hard philosophical questions, so they help rather than mislead on them.
 - [Public input into model values (collective constitutions, assemblies)](https://aisafetycompendium.com/compendium/approaches/public-input-into-model-values/): Run deliberation and voting with members of the public to set the principles a model is trained to follow.
 
-## Theory: the maths of agents and goals
+### Theory: the maths of agents and goals
 
 - [Assistance games / cooperative inverse reinforcement learning](https://aisafetycompendium.com/compendium/approaches/assistance-games-cirl/): Model the AI as uncertain about what the human wants, so it defers rather than assumes.
 - [Mild optimisation / satisficing](https://aisafetycompendium.com/compendium/approaches/mild-optimisation-satisficing/): Train systems to do "good enough" instead of maximising, cutting the pull toward extreme strategies.
@@ -49,7 +57,7 @@ All approaches: https://aisafetycompendium.com/compendium/approaches/
 - [Multi-agent alignment and commitment dynamics](https://aisafetycompendium.com/compendium/approaches/multi-agent-alignment/): Prevent collusion, conflict or destabilising races between many AI systems.
 - [Group agency and collective intentionality](https://aisafetycompendium.com/compendium/approaches/group-agency/): Formal philosophy of when many agents constitute one agent.
 
-## Shaping the model: data and training
+### Shaping the model: data and training
 
 - [Learning from feedback (RLHF — training on human ratings of model outputs)](https://aisafetycompendium.com/compendium/approaches/learning-from-feedback/): Score the model on human or AI preference judgements so its behaviour tracks what raters wanted.
 - [Scalable oversight](https://aisafetycompendium.com/compendium/approaches/scalable-oversight/): Let humans, helped by AI, supervise outputs too complex or costly to check by hand.
@@ -68,7 +76,11 @@ All approaches: https://aisafetycompendium.com/compendium/approaches/
 - [Calibration and honest expression of uncertainty](https://aisafetycompendium.com/compendium/approaches/calibration-and-honest-uncertainty/): Train and test models so their stated confidence matches how often they are right, and they say when they do not know.
 - [Constrained reinforcement learning / shielding](https://aisafetycompendium.com/compendium/approaches/constrained-rl-and-shielding/): Keep a learning agent inside safety limits, either by maximising reward subject to cost constraints or by a shield outside the policy that blocks unsafe actions.
 
-## Looking inside the model
+## Evaluating
+
+Finding out what a model can do, what it wants, or whether it is safe.
+
+### Looking inside the model
 
 - [Mechanistic interpretability](https://aisafetycompendium.com/compendium/approaches/mechanistic-interpretability/): Reverse-engineer the network's internals into human-readable circuits and algorithms.
 - [Chain-of-thought faithfulness and monitoring](https://aisafetycompendium.com/compendium/approaches/chain-of-thought-monitoring/): Read the model's written reasoning and check it reflects the real decision process.
@@ -78,7 +90,7 @@ All approaches: https://aisafetycompendium.com/compendium/approaches/
 - [Model introspection](https://aisafetycompendium.com/compendium/approaches/model-introspection/): Study whether models can accurately report on their own internal states.
 - [Lie detection and honesty training](https://aisafetycompendium.com/compendium/approaches/lie-detection-and-honesty-training/): Build detectors that catch a model stating what it believes false, and train models to be honest rather than merely plausible.
 
-## Testing before release
+### Testing before release
 
 - [Dangerous-capability evaluations](https://aisafetycompendium.com/compendium/approaches/dangerous-capability-evaluations/): Test models for bio, cyber, persuasion, autonomy and scheming capabilities before release.
 - [Sandbagging and situational-awareness evaluations](https://aisafetycompendium.com/compendium/approaches/sandbagging-evaluations/): Test whether a model hides capability or behaves differently when it knows it is being tested.
@@ -92,7 +104,11 @@ All approaches: https://aisafetycompendium.com/compendium/approaches/
 - [Multi-agent evaluations and collusion detection](https://aisafetycompendium.com/compendium/approaches/multi-agent-evaluations/): Test groups of interacting AI agents for collusion, hidden signalling and miscoordination, and build monitors that catch it.
 - [Safety cases](https://aisafetycompendium.com/compendium/approaches/safety-cases/): A structured, auditable argument that a system is acceptably safe, borrowed from nuclear and aviation.
 
-## Releasing and running it safely
+## Constraining
+
+Limiting what a model, or the companies that build it, can do.
+
+### Releasing and running it safely
 
 - [AI control (restrict and monitor an untrusted model)](https://aisafetycompendium.com/compendium/approaches/ai-control/): Design deployment so a misaligned model still cannot cause harm.
 - [Behavioural and activation monitoring](https://aisafetycompendium.com/compendium/approaches/activation-monitoring/): Watch outputs or internal activations in live deployment for hazard signals.
@@ -103,22 +119,7 @@ All approaches: https://aisafetycompendium.com/compendium/approaches/
 - [Agent identity and accountability (IDs for AI systems)](https://aisafetycompendium.com/compendium/approaches/agent-ids-and-accountability/): Give AI systems unique IDs so their actions can be traced to the system and the party responsible.
 - [Limiting proliferation of high-risk models](https://aisafetycompendium.com/compendium/approaches/limiting-model-proliferation/): Restrict distribution, for example through monitored application interfaces.
 
-## AI and people's own judgement
-
-- [Human empowerment as an explicit design goal](https://aisafetycompendium.com/compendium/approaches/empowerment-as-a-design-goal/): Build AI that augments rather than substitutes for human capability, on purpose.
-- [Epistemic-autonomy protection and anti-manipulation](https://aisafetycompendium.com/compendium/approaches/anti-manipulation-protection/): Stop AI from nudging, manipulating or homogenising beliefs at scale.
-- [Disempowerment formalism](https://aisafetycompendium.com/compendium/approaches/disempowerment-formalism/): Create formal notions of empowerment and disempowerment that are conceptually and operationally sound.
-- [Gradual-disempowerment research](https://aisafetycompendium.com/compendium/approaches/gradual-disempowerment-research/): Study how humans lose meaningful control incrementally, with no single catastrophic event.
-- [Indicators of human versus AI influence](https://aisafetycompendium.com/compendium/approaches/human-versus-ai-influence-metrics/): Build metrics that track how much of economic, cultural and political life humans still steer.
-- [Agent-based modelling of agency loss](https://aisafetycompendium.com/compendium/approaches/agent-based-models-of-agency-loss/): Simulate disempowerment as accumulated small surrenders rather than a takeover event.
-- [Manipulation characterisation](https://aisafetycompendium.com/compendium/approaches/manipulation-characterisation/): Define and measure manipulation as distinct from legitimate persuasion.
-- [Authenticity versus agency (the captured-will question)](https://aisafetycompendium.com/compendium/approaches/authenticity-versus-agency/): Split "human autonomy" into whether the want is really yours and whether you can act on it.
-- [Human self-enhancement and empowerment](https://aisafetycompendium.com/compendium/approaches/human-self-enhancement/): Raise human capability directly, so humans can keep pace with AI rather than be replaced by it.
-- [Autonomy-first product and prototype building](https://aisafetycompendium.com/compendium/approaches/autonomy-first-prototypes/): Fund small builds that strengthen judgement and self-formation rather than convenience.
-- [Watermarking and content provenance](https://aisafetycompendium.com/compendium/approaches/watermarking-and-provenance/): Marks AI-made media with hidden signals or signed records so people can check where it came from.
-- [Proof of personhood (personhood credentials)](https://aisafetycompendium.com/compendium/approaches/proof-of-personhood/): Lets a person prove an online account belongs to a real human without revealing who they are.
-
-## Holding AI companies to account
+### Holding AI companies to account
 
 - [Independent third-party evaluation and audit](https://aisafetycompendium.com/compendium/approaches/third-party-evaluation-and-audit/): Outside parties test and verify a lab's safety and capability claims.
 - [Liability and tort mechanisms](https://aisafetycompendium.com/compendium/approaches/liability-and-tort-mechanisms/): Make developers legally bear the cost of catastrophic AI harm.
@@ -145,7 +146,26 @@ All approaches: https://aisafetycompendium.com/compendium/approaches/
 - [Competition policy and antitrust](https://aisafetycompendium.com/compendium/approaches/competition-policy-and-antitrust/): Uses competition law to limit how far a few firms can concentrate control of AI.
 - [Planned handover of AGI control](https://aisafetycompendium.com/compendium/approaches/planned-handover-of-agi-control/): A lab commits in advance to hand control of an aligned AGI to a more democratically legitimate body.
 
-## Global coordination
+## Societal resilience
+
+Making the world outside the AI hold up.
+
+### AI and people's own judgement
+
+- [Human empowerment as an explicit design goal](https://aisafetycompendium.com/compendium/approaches/empowerment-as-a-design-goal/): Build AI that augments rather than substitutes for human capability, on purpose.
+- [Epistemic-autonomy protection and anti-manipulation](https://aisafetycompendium.com/compendium/approaches/anti-manipulation-protection/): Stop AI from nudging, manipulating or homogenising beliefs at scale.
+- [Disempowerment formalism](https://aisafetycompendium.com/compendium/approaches/disempowerment-formalism/): Create formal notions of empowerment and disempowerment that are conceptually and operationally sound.
+- [Gradual-disempowerment research](https://aisafetycompendium.com/compendium/approaches/gradual-disempowerment-research/): Study how humans lose meaningful control incrementally, with no single catastrophic event.
+- [Indicators of human versus AI influence](https://aisafetycompendium.com/compendium/approaches/human-versus-ai-influence-metrics/): Build metrics that track how much of economic, cultural and political life humans still steer.
+- [Agent-based modelling of agency loss](https://aisafetycompendium.com/compendium/approaches/agent-based-models-of-agency-loss/): Simulate disempowerment as accumulated small surrenders rather than a takeover event.
+- [Manipulation characterisation](https://aisafetycompendium.com/compendium/approaches/manipulation-characterisation/): Define and measure manipulation as distinct from legitimate persuasion.
+- [Authenticity versus agency (the captured-will question)](https://aisafetycompendium.com/compendium/approaches/authenticity-versus-agency/): Split "human autonomy" into whether the want is really yours and whether you can act on it.
+- [Human self-enhancement and empowerment](https://aisafetycompendium.com/compendium/approaches/human-self-enhancement/): Raise human capability directly, so humans can keep pace with AI rather than be replaced by it.
+- [Autonomy-first product and prototype building](https://aisafetycompendium.com/compendium/approaches/autonomy-first-prototypes/): Fund small builds that strengthen judgement and self-formation rather than convenience.
+- [Watermarking and content provenance](https://aisafetycompendium.com/compendium/approaches/watermarking-and-provenance/): Marks AI-made media with hidden signals or signed records so people can check where it came from.
+- [Proof of personhood (personhood credentials)](https://aisafetycompendium.com/compendium/approaches/proof-of-personhood/): Lets a person prove an online account belongs to a real human without revealing who they are.
+
+### Global coordination
 
 - [Halting frontier AI development](https://aisafetycompendium.com/compendium/approaches/halting-frontier-ai-development/): Prepare the legal, technical and institutional means for an internationally coordinated halt to the most dangerous AI development.
 - [Agreement verification technology](https://aisafetycompendium.com/compendium/approaches/agreement-verification-tech/): Build the technology and protocols that let governments, or AI developers, verify that an AI agreement is being kept.
@@ -160,7 +180,7 @@ All approaches: https://aisafetycompendium.com/compendium/approaches/
 - [Space resource governance](https://aisafetycompendium.com/compendium/approaches/space-resource-governance/): Agree rules now against exclusive grabs of offworld resources, before advanced AI makes them reachable.
 - [Benefit-sharing for joining governance (Atoms for Peace model)](https://aisafetycompendium.com/compendium/approaches/benefits-for-joining-governance/): Offers states access to AI benefits in return for joining safety governance, as Atoms for Peace did for nuclear technology.
 
-## Society: defence and who holds power
+### Society: defence and who holds power
 
 - [Defence acceleration (d/acc)](https://aisafetycompendium.com/compendium/approaches/defence-acceleration/): Deliberately speed up defensive technology faster than offensive, across physical, bio, cyber and information domains, plus social technology.
 - [Differential technology development](https://aisafetycompendium.com/compendium/approaches/differential-tech-development/): Delay risky innovation and accelerate safer substitutes, adjusting relative timing.
@@ -179,6 +199,10 @@ All approaches: https://aisafetycompendium.com/compendium/approaches/
 - [Worker bargaining power over AI at work](https://aisafetycompendium.com/compendium/approaches/worker-bargaining-power-over-ai/): Give workers and unions a negotiated say over how employers use AI, through contracts and labour agreements with tech firms.
 
 ## AI welfare
+
+Whether the AI itself could be wronged.
+
+### AI welfare
 
 - [Grounds of moral status](https://aisafetycompendium.com/compendium/approaches/grounds-of-moral-status/): Argue what capacity earns a being moral consideration — sentience, cognitive sophistication, or something else.
 - [Model welfare research](https://aisafetycompendium.com/compendium/approaches/model-welfare-research/): Investigate whether and when an AI system's welfare deserves moral consideration.

@@ -470,6 +470,29 @@ details.pcard[open] { grid-column: 1 / -1; }
 .ap-zero { margin-top: 8px; font-size: 13px; line-height: 1.45; color: var(--ink2); font-style: italic; }
 #orgs[hidden], #og-pill[hidden] { display: none; }
 
+/* ---------- bands (the four-bucket layer) ---------- */
+/* one colour per band, from the locked series (kit.css --s1..--s8, which switch with the theme); this order passes the
+   dataviz palette validator (adjacent pairs) in light and dark */
+:root { --band-field: var(--s3); --band-aligned: var(--s4); --band-evaluating: var(--s5); --band-constraining: var(--s1);
+	--band-resilience: var(--s7); --band-welfare: var(--s8); }
+.band { margin-top: 40px; padding-top: 14px; border-top: 3px solid var(--bk); }
+.band-h { max-width: 66ch; }
+.band-h .band-title { font-size: 22px; display: flex; align-items: center; gap: 10px; }
+.band-h .band-title::before { content: ''; width: 12px; height: 12px; border-radius: 3px; background: var(--bk); flex: none; }
+.band-h p { margin: 4px 0 0; color: var(--ink2); }
+.band .atlas-group:first-of-type { margin-top: 18px; }
+.ap-filter-l { margin: 14px 0 -8px; }
+.bk-tags { display: flex; flex-wrap: wrap; gap: 4px 6px; margin: 4px 0 6px; }
+.kit-card p.bk-tags, .kit-sheet p.bk-tags { margin: 4px 0 6px; }
+.bk-tag { display: inline-flex; align-items: center; gap: 5px; font: 500 11px/1 var(--f-mono); color: var(--ink2); border: 1px solid var(--rule); border-radius: 999px; padding: 4px 8px 4px 6px; white-space: nowrap; }
+.bk-tag i { width: 8px; height: 8px; border-radius: 50%; background: var(--bk); flex: none; }
+.bk-tag.bk-also i { background: transparent; box-shadow: inset 0 0 0 1.5px var(--bk); }
+.bk-tag.bk-diff { color: var(--ink3); border-style: dashed; padding-left: 8px; }
+.ap-jump .jb { display: block; }
+.ap-jump .jb-h { display: flex; align-items: center; gap: 8px; font: 600 12px/1.3 var(--f-mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink2); margin-top: 8px; }
+.ap-jump .jb-h::before { content: ''; width: 10px; height: 10px; border-radius: 2px; background: var(--bk); flex: none; }
+.ap-jump .jb ol { margin: 4px 0 0 18px; }
+
 /* ---------- promise versus work ---------- */
 /* colours from the draft view (palette-checked); dark first, like kit.css */
 :root { --pm-under: #c98232; --pm-over: #5b95cf; --pm-dot: #5f5b54; }
@@ -555,3 +578,7 @@ details.pcard[open] { grid-column: 1 / -1; }
 #theme-toggle[hidden] { display: none; }
 @media (max-width: 520px) { .kit-top .bw { display: none; } }
 @media (max-width: 420px) { .kit-top nav .kit-pill { padding: 7px 8px; } }
+.sp .band-h .band-title { margin: 0; }
+.sp .band > section > h3 { font-size: 18px; color: var(--ink); margin-top: 24px; }
+.sp .band h4 { font-size: 15px; margin: 18px 0 4px; color: var(--ink2); }
+.sp > .bk-tags { margin: 6px 0 2px; }
