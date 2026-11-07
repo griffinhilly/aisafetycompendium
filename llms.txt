@@ -1,6 +1,6 @@
 # AI Safety Compendium
 
-> A map of the approaches proposed for making advanced AI safe: 157 approaches in 12 groups, each with how it works, where research stands, criticisms, who works on it and where to start reading; 24 published overviews of the field compared side by side; and a directory of 237 organisations.
+> A map of the approaches proposed for making advanced AI safe: 158 approaches in 12 groups, each with how it works, where research stands, criticisms, who works on it and where to start reading; 24 published overviews of the field compared side by side; and a directory of 237 organisations.
 
 Main page: https://aisafetycompendium.com/compendium/
 All approaches: https://aisafetycompendium.com/compendium/approaches/
@@ -23,6 +23,7 @@ Feeds all four: it adds people, money and know-how to making aligned models, eva
 - [Career advice and job matching](https://aisafetycompendium.com/compendium/approaches/career-advice-and-job-matching/): Give people free career research, one-on-one advice and curated job listings that steer them into AI safety roles.
 - [Research training and upskilling programmes](https://aisafetycompendium.com/compendium/approaches/research-training-programmes/): Run courses, bootcamps and mentored fellowships that train newcomers for AI safety research, engineering and policy work.
 - [Shared offices, hubs, convenings and forums](https://aisafetycompendium.com/compendium/approaches/hubs-convenings-and-forums/): Run the offices, campuses, conferences and online forums where safety researchers work side by side, meet and publish.
+- [Reducing geographic constraints on AI-safety talent](https://aisafetycompendium.com/compendium/approaches/access-beyond-the-hubs/): Widen the talent pool by expanding where AI-safety work gets done, so people who cannot move to the Bay Area, London or Washington DC can still contribute through remote and part-time programmes, paid entry roles and local hubs.
 
 ## Making aligned models
 
