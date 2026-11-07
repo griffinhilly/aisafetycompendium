@@ -1,6 +1,6 @@
 # AI Safety Compendium
 
-> A map of the approaches proposed for making advanced AI safe: 151 approaches in 12 groups, each with how it works, where research stands, criticisms, who works on it and where to start reading; 24 published overviews of the field compared side by side; and a directory of 237 organisations.
+> A map of the approaches proposed for making advanced AI safe: 157 approaches in 12 groups, each with how it works, where research stands, criticisms, who works on it and where to start reading; 24 published overviews of the field compared side by side; and a directory of 237 organisations.
 
 Main page: https://aisafetycompendium.com/compendium/
 All approaches: https://aisafetycompendium.com/compendium/approaches/
@@ -20,6 +20,9 @@ Feeds all four: it adds people, money and know-how to making aligned models, eva
 - [Think tank for AI labs](https://aisafetycompendium.com/compendium/approaches/think-tank-for-ai-labs/): On-demand independent expertise for lab safety and governance teams.
 - [Automated safety research](https://aisafetycompendium.com/compendium/approaches/automated-safety-research/): Uses AI systems to do alignment research, so safety work can keep pace with growing capabilities.
 - [Public communication and content creation](https://aisafetycompendium.com/compendium/approaches/public-communication/): Explain AI risk to wide audiences through video, podcasts, books, social media and journalism.
+- [Career advice and job matching](https://aisafetycompendium.com/compendium/approaches/career-advice-and-job-matching/): Give people free career research, one-on-one advice and curated job listings that steer them into AI safety roles.
+- [Research training and upskilling programmes](https://aisafetycompendium.com/compendium/approaches/research-training-programmes/): Run courses, bootcamps and mentored fellowships that train newcomers for AI safety research, engineering and policy work.
+- [Shared offices, hubs, convenings and forums](https://aisafetycompendium.com/compendium/approaches/hubs-convenings-and-forums/): Run the offices, campuses, conferences and online forums where safety researchers work side by side, meet and publish.
 
 ## Making aligned models
 
@@ -75,6 +78,7 @@ Building the model so it wants and does the right thing.
 - [Robustness and goal generalisation under distribution shift](https://aisafetycompendium.com/compendium/approaches/robustness-to-distribution-shift/): Make a model keep both its skills and its intended goals when deployment conditions differ from training.
 - [Calibration and honest expression of uncertainty](https://aisafetycompendium.com/compendium/approaches/calibration-and-honest-uncertainty/): Train and test models so their stated confidence matches how often they are right, and they say when they do not know.
 - [Constrained reinforcement learning / shielding](https://aisafetycompendium.com/compendium/approaches/constrained-rl-and-shielding/): Keep a learning agent inside safety limits, either by maximising reward subject to cost constraints or by a shield outside the policy that blocks unsafe actions.
+- [Safer alternative AI designs (non-agentic and bounded systems)](https://aisafetycompendium.com/compendium/approaches/safer-alternative-ai-designs/): Build a different kind of AI that is safe by design, such as a predictor with no goals of its own, instead of aligning goal-pursuing agents.
 
 ## Evaluating
 
@@ -103,6 +107,7 @@ Finding out what a model can do, what it wants, or whether it is safe.
 - [Science of evaluations and capability elicitation](https://aisafetycompendium.com/compendium/approaches/science-of-evaluations/): Make AI tests trustworthy: draw out a model's full ability, measure the right thing, and report statistical uncertainty.
 - [Multi-agent evaluations and collusion detection](https://aisafetycompendium.com/compendium/approaches/multi-agent-evaluations/): Test groups of interacting AI agents for collusion, hidden signalling and miscoordination, and build monitors that catch it.
 - [Safety cases](https://aisafetycompendium.com/compendium/approaches/safety-cases/): A structured, auditable argument that a system is acceptably safe, borrowed from nuclear and aviation.
+- [Real-world trials of AI agents](https://aisafetycompendium.com/compendium/approaches/real-world-agent-trials/): Run AI agents with real money, tools and people in open-ended settings, and record how they behave and fail.
 
 ## Constraining
 
@@ -179,6 +184,7 @@ Making the world outside the AI hold up.
 - [Concentrate defensive capability in allied hands](https://aisafetycompendium.com/compendium/approaches/defensive-ai-in-allied-hands/): Give advanced AI to the intelligence and defence communities of the US and its democratic allies; restrict chips.
 - [Space resource governance](https://aisafetycompendium.com/compendium/approaches/space-resource-governance/): Agree rules now against exclusive grabs of offworld resources, before advanced AI makes them reachable.
 - [Benefit-sharing for joining governance (Atoms for Peace model)](https://aisafetycompendium.com/compendium/approaches/benefits-for-joining-governance/): Offers states access to AI benefits in return for joining safety governance, as Atoms for Peace did for nuclear technology.
+- [International AI red lines](https://aisafetycompendium.com/compendium/approaches/international-ai-red-lines/): Get countries to agree on specific AI behaviours and uses that are banned everywhere, such as AI that copies itself without human approval.
 
 ### Society: defence and who holds power
 
