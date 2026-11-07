@@ -1,6 +1,6 @@
 # AI Safety Compendium
 
-> A map of the approaches proposed for making advanced AI safe: 151 approaches in 12 groups, each with how it works, where research stands, criticisms, who works on it and where to start reading; 24 published overviews of the field compared side by side; and a directory of 230 organisations.
+> A map of the approaches proposed for making advanced AI safe: 151 approaches in 12 groups, each with how it works, where research stands, criticisms, who works on it and where to start reading; 24 published overviews of the field compared side by side; and a directory of 237 organisations.
 
 Main page: https://aisafetycompendium.com/compendium/
 All approaches: https://aisafetycompendium.com/compendium/approaches/
@@ -218,4 +218,4 @@ Whether the AI itself could be wronged.
 
 ## Organisations
 
-- [230 organisations working on AI safety](https://aisafetycompendium.com/compendium/organisations/): Every organisation in the directory, by type, each with its own page.
+- [237 organisations working on AI safety](https://aisafetycompendium.com/compendium/organisations/): Every organisation in the directory, by type, each with its own page.
