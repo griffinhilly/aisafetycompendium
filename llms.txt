@@ -4,6 +4,8 @@
 
 Main page: https://aisafetycompendium.com/compendium/
 All approaches: https://aisafetycompendium.com/compendium/approaches/
+Open problems: https://aisafetycompendium.com/compendium/open-problems/ (Every open problem from the approach entries, in one list, by band and group.)
+About: https://aisafetycompendium.com/compendium/about/ (What the compendium is, how it was made and who made it.)
 
 ## Building the field
 

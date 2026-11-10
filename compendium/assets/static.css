@@ -548,6 +548,24 @@ details.pcard[open] { grid-column: 1 / -1; }
 .og-more { border-color: var(--accent); }
 .og-more[hidden] { display: none; }
 
+/* ---------- open problems (one list from every deep entry) and About ---------- */
+.op-gh { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; max-width: calc(76ch + 15px); font-size: 16px; margin: 26px 0 6px; padding-top: 10px; border-top: 2px solid var(--bk); }
+.op-gh .dp-src { font: 500 11px/1 var(--f-mono); text-transform: uppercase; letter-spacing: 0.05em; }
+.op-list { list-style: none; padding: 0; margin: 0; }
+.op-item { padding: 10px 0 10px 12px; margin: 0; border-left: 3px solid var(--bk); border-bottom: 1px solid var(--rule); max-width: 76ch; scroll-margin-top: 80px; }
+.op-item p { margin: 0; }
+.op-text { color: var(--ink); line-height: 1.5; }
+.op-text a { overflow-wrap: anywhere; }
+.op-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-top: 5px !important; font-size: 13.5px; color: var(--ink2); }
+.op-link { font: 12px/1.4 var(--f-mono); color: var(--ink3); }
+.op-more-row { margin: 14px 0 0; }
+.op-more-row .og-more[hidden] { display: none; }
+.op-see { margin-top: .6em; }
+.ab-body .ab-h { font-size: 17px; margin: 1.6em 0 .3em; }
+.ab-body .ab-h:first-child { margin-top: .6em; }
+.sp .op-list { margin-top: 6px; }
+.sp .op-ap-h { font-size: 15px; margin: 18px 0 2px; }
+
 /* Permanent approach and organisation pages (server-rendered; layered on kit.css + page.css by build_static_pages.py). */
 .sp { padding-top: 22px; }
 .sp h1 { font-size: clamp(28px, 5.4vw, 40px); margin: 6px 0 4px; }
